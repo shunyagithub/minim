@@ -1,0 +1,68 @@
+$h1: 35px;
+$h2: 30px;
+$h3: 25px;
+$h4: 20px;
+$h5: 18px;
+$h6: 12px;
+
+$p: 18px;
+
+$color1: #333333;
+$color2: #c4c4c4;
+$color3: #e9c547;
+
+
+body,
+.editor-post-title__input {
+    font-family: -apple-system, Helvetica Neue, Segoe UI, Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, sans-serif;
+}
+
+
+p {
+    font-size: $p;
+    line-height: 32px;
+}
+
+h1 {
+    font-size: $h1;
+
+}
+
+h2 {
+    font-size: $h2;
+    
+}
+
+
+
+
+h3 {
+    font-size: $h3;
+    
+}
+
+h4 {
+    font-size: $h4;
+    
+    padding-bottom: 5px;
+    border-bottom: 1px solid $color2;
+}
+
+h5 {
+    font-size: $h5;
+    
+}
+
+h6 {
+    font-size: $h6;
+
+}
+
+//横幅
+.wp-block:not([data-align="full"]:not([data-align="wide"])) {
+    max-width: calc(700px + 40px);
+}
+
+.wp-block[data-align="wide"] {
+    max-width: calc(1020px + 30px);
+}

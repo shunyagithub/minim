@@ -1,0 +1,1046 @@
+/*
+Theme Name: MINIM
+Author: SHUNYA
+Description: Minim Original Theme
+Version: 1.0
+*/
+
+$h1: 35px;
+$h2: 30px;
+$h3: 25px;
+$h4: 20px;
+$h5: 18px;
+$h6: 12px;
+
+$p: 18px;
+$top-cat-a: 30px;
+$logo: 25px;
+$sidebar-titile: 18px;
+
+$color1: #333333;
+$color2: #c4c4c4;
+$color3: #e9c547;
+
+$bp: 720px;
+$bp2: 1320px;
+
+@mixin sp {
+    @media screen and (max-width: ($bp)) {
+        @content;
+    }
+}
+
+@mixin bp {
+    @media screen and (min-width: ($bp)) {
+        @content;
+    }
+}
+
+@mixin bp2 {
+    @media screen and (min-width: ($bp2)) {
+        @content;
+    }
+}
+
+
+
+
+
+
+.alignleft {
+    float: left;
+    margin-left: 0;
+    margin-right: 1em;
+}
+
+.alignright {
+    float: right;
+    margin-left: 1em;
+    margin-right: 0;
+}
+
+.aligncenter {
+    margin: 0 auto;
+}
+
+.alignfull {
+    margin: 0 -10px;
+    max-width: none;
+    width: auto;
+
+    @include bp {
+
+        margin: 0 calc((100vw - 700px)/2 * -1);
+
+    }
+
+
+}
+
+.alignwide {
+
+
+    @include bp {
+
+        margin: 0 calc((100vw - 700px)/4 * -1);
+        max-width: none;
+        width: auto;
+
+    }
+
+    @include bp2 {
+
+        margin: 0 -150px;
+
+    }
+
+
+}
+
+.wp-block-categories.aligncenter,
+.wp-block-latest-posts.aligncenter,
+.wp-block-archives.aligncenter,
+.wp-block-tag-cloud.aligncenter,
+.wp-block-latest-comments.aligncenter,
+.wp-block-rss.aligncenter {
+    text-align: center;
+}
+
+figure {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+body *,
+body *::before,
+body *::after {
+    box-sizing: inherit;
+}
+
+/*FONTS*/
+
+body {
+    font-family: -apple-system, Helvetica Neue, Segoe UI, Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, sans-serif;
+
+    //横幅
+    margin: 0;
+    color: $color1;
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+p {
+    font-size: $p;
+    line-height: 32px;
+}
+
+h1 {
+    font-size: $h1;
+
+}
+
+h2 {
+    font-size: $h2;
+
+}
+
+
+
+
+h3 {
+    font-size: $h3;
+
+}
+
+h4 {
+    font-size: $h4;
+
+    padding-bottom: 5px;
+    border-bottom: 1px solid $color2;
+}
+
+h5 {
+    font-size: $h5;
+
+}
+
+h6 {
+    font-size: $h6;
+
+}
+
+
+//引用文
+.wp-block-quote {
+    border: none;
+    margin-top: 40px;
+
+    &::before {
+        font-family: "dashicons";
+        content: "\f205";
+        font-size: $h1;
+    }
+
+    cite {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1em;
+
+        &::before {
+            content: "";
+            position: absolute;
+
+            bottom: 35px;
+            display: inline-block;
+            width: 100px;
+            height: 1px;
+            left: 0%;
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+            background-color: $color3;
+
+        }
+    }
+}
+
+//700px以内に収める
+.mycontainer {
+
+
+    margin: 0 10px;
+
+    @include bp {
+        max-width: none; //700px より大きくならない
+        margin: 0 calc((100vw - 700px)/2);
+    }
+
+    .wp-block-image {
+        margin-top: 40px;
+    }
+
+
+}
+
+
+//HEADER
+.myhead {
+
+    border-bottom: 1px solid $color2;
+
+    .header-container {
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+
+        align-items: center;
+        padding: 20px 10px;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        @include sp {
+            padding: 30px 10px;
+        }
+
+        .nav-logo {
+
+            position: absolute;
+            left: 2%;
+
+            a {
+                font-size: $logo;
+                color: inherit;
+                text-decoration: none;
+                cursor: pinter;
+            }
+        }
+
+
+
+
+
+        //NAV MENU
+
+        .mynav {
+            // margin: 0 20% !important;
+
+
+            ul {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+
+                li {
+
+                    a {
+                        color: inherit;
+                        cursor: pinter;
+                        text-decoration: none;
+                        font-size: 16px;
+                    }
+                }
+
+            }
+
+            li:not(:last-child) {
+                margin-right: 1em;
+
+            }
+
+            @include sp {
+                ul {
+                    display: block;
+                    margin: 100px 0;
+
+                    li {
+                        text-align: center;
+                        margin-bottom: 20%;
+
+                        a {
+                            font-size: $h4 !important;
+                        }
+                    }
+
+
+                }
+            }
+
+
+        }
+
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
+//BLOG CONTENTS
+
+.myposthead {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+
+
+
+    .post-categories {
+        list-style-type: none;
+        padding: 30px 0;
+
+
+        a {
+            font-size: $top-cat-a;
+            color: $color3;
+            text-decoration: none;
+            border-bottom: 2px solid $color3;
+
+        }
+
+    }
+
+    time {
+        color: $color2;
+
+    }
+}
+
+
+.mypostlist {
+    padding-top: 100px;
+
+
+    article {
+        display: flex;
+
+        justify-content: space-between;
+        margin-bottom: 100px;
+
+        &:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+
+
+        .post-content {
+            width: 45%
+        }
+
+        .post-img {
+            width: 45%;
+
+
+            figure {
+                margin: 0;
+            }
+
+            img {
+                height: 500px;
+                object-fit: cover;
+            }
+        }
+
+
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin: 70px 0 50px 0;
+        }
+
+        .readmore {
+
+
+
+            &:hover>a::before,
+            &:hover>a::after {
+                background-color: $color3;
+                width: 50px;
+            }
+
+            a {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                color: $color1;
+
+                transition: ease 0.2s;
+
+
+
+
+                &::before {
+                    content: "";
+
+                    display: inline-block;
+                    width: 20px;
+                    height: 2px;
+                    margin: 0 10px 5px 0;
+                    background-color: $color1;
+                    transition: ease 0.2s;
+                }
+
+                &::after {
+                    content: "";
+
+                    display: inline-block;
+                    width: 20px;
+                    height: 2px;
+                    margin: 0 0 5px 10px;
+                    background-color: $color1;
+                    transition: ease 0.2s;
+                }
+            }
+        }
+
+
+    }
+
+
+    @include sp {
+
+        article {
+            display: block;
+
+            .post-img {
+
+                width: 100%;
+
+                img {
+                    height: 200px;
+                    object-fit: cover;
+                }
+            }
+
+            .post-content {
+                width: 100%
+            }
+        }
+
+
+    }
+}
+
+.pagination {
+
+    .screen-reader-text {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        margin-bottom: 50px;
+        justify-content: center;
+    }
+
+    .page-numbers:not(:last-child) {
+        margin-right: 15px;
+    }
+
+    .current {
+        color: $color1;
+        border-bottom: 1px solid $color3;
+    }
+
+    a {
+        text-decoration: none;
+        color: $color2;
+
+        &:hover {
+            color: $color1;
+        }
+    }
+
+
+}
+
+
+.myprofile {
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0;
+    padding: 20px 0;
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.05);
+
+    .profile-img {
+        width: 30%;
+        margin-left: 30px;
+    }
+
+    .profile-desc {
+        width: 60%;
+
+        .profile-sns-links {
+
+
+            ul {
+                display: flex;
+                justify-content: flex-start;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    margin-right: 15px;
+
+                    a {
+                        text-decoration: none;
+                        color: $color1;
+
+                        &:hover {
+                            color: $color3;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    img {
+        max-width: 120px;
+        max-height: 120px;
+        border-radius: 50%;
+
+        @include sp {
+            max-width: 90px;
+            max-height: 90px;
+        }
+    }
+
+    p {
+        font-size: $h6;
+        line-height: 16px;
+    }
+
+    strong {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1em;
+
+        &::before {
+            content: "";
+            position: absolute;
+
+            bottom: -5px;
+            display: inline-block;
+            width: 100px;
+            height: 1px;
+            left: 0%;
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+            background-color: $color3;
+
+        }
+    }
+
+
+}
+
+
+
+
+.myfoot {
+    border-top: 1px solid $color2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        padding: 20px 0;
+    }
+}
+
+.share {
+    display: block;
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+//SNSシェアボタン
+.socialBtn {
+    margin: 10px 0 50px 0;
+    padding: 0;
+    display: flex;
+    // flex-wrap: wrap;
+    justify-content: space-around;
+
+
+
+    li {
+        list-style: none;
+        width: 24%;
+        margin-top: 2%;
+        margin-left: 0;
+
+        a {
+
+            display: block;
+            color: $color1;
+            text-decoration: none;
+            line-height: 42px;
+            letter-spacing: .05em;
+            font-size: 16px;
+            text-align: center;
+
+
+
+            &:hover {
+                color: $color3;
+            }
+
+            span {
+                display: none;
+                font-family: -apple-system, Helvetica Neue, Segoe UI, Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, sans-serif;
+            }
+
+        }
+    }
+
+}
+
+
+
+.socialBtn [class^="icon-"]:before,
+.socialBtn [class*=" icon-"]:before {
+    margin-right: 5px;
+
+}
+
+//widget
+
+
+
+.mymenu {
+    margin-top: 40px;
+    padding: 40px 0;
+
+    h2 {
+
+
+        padding: 20px 0;
+
+        text-transform: uppercase;
+        font-size: $sidebar-titile;
+
+        &::before {
+            bottom: 10px;
+        }
+
+    }
+}
+
+
+@include bp {
+    .mymenu-columns {
+        columns: 3;
+        column-gap: 30px;
+
+    }
+
+    .mymenu-columns>section {
+
+
+        position: relative;
+        overflow: hidden;
+        break-inside: avoid;
+
+
+    }
+}
+
+
+
+
+
+
+
+.widget {
+
+    h2 {
+        // font-size: $h2;
+
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1em;
+
+        &::before {
+            content: "";
+            position: absolute;
+
+            bottom: 5px;
+            display: inline-block;
+            width: 100px;
+            height: 1px;
+            left: 0%;
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+            background-color: $color3;
+
+        }
+    }
+
+
+
+    list-style-type: none;
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+        font-size: $h5;
+    }
+
+    li {
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $color1;
+
+        &:hover {
+            color: $color2;
+        }
+    }
+
+    .select {
+        width: 100%;
+        height: 40px;
+        border: solid 1px $color2;
+    }
+
+
+}
+
+.widget_archive {
+    label {
+        display: none;
+
+    }
+
+    select {
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+
+//MY RElATED
+.myrelated {
+
+    margin-bottom: 30px;
+
+    .myrelated-container {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        article {
+            width: 48%;
+            margin-bottom: 20px;
+
+            a {
+                text-decoration: none;
+                color: $color1;
+
+                &:hover {
+                    color: $color2;
+                }
+
+
+
+                figure {
+                    margin: 0;
+
+                    img {
+                        height: 200px;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+        }
+
+
+    }
+}
+
+//Archive
+
+.archive_head {
+
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    h4 {
+        font-size: 30px;
+        color: $color3;
+        text-transform: uppercase;
+        border: none;
+    }
+
+}
+
+
+
+//CONTACT FORM
+.wpcf7-text,
+.wpcf7-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $color2;
+
+}
+
+.wpcf7-submit {
+    width: 250px;
+    padding: 10px;
+    border: none;
+    background-color: $color1;
+    color: #fff;
+    -webkit-appearance: none;
+}
+
+//SEARCH
+
+
+
+.search-container {
+    position: absolute;
+    right: 2%;
+
+    #searchform {
+
+
+        .screen-reader-text {
+            display: none;
+        }
+
+        #s {
+            outline: 0;
+            width: 100px;
+            border-width: 0 0 2px;
+            border-color: $color1;
+            transition: all .3s ease;
+            -webkit-transition: all .3s ease;
+
+            &:focus {
+                border-color: $color3;
+            }
+
+            @include sp {
+                width: 270px;
+
+            }
+
+
+        }
+
+        button {
+            font-size: 15px;
+            border: none;
+            padding: 10px;
+            background: none;
+            cursor: pointer;
+
+
+        }
+
+
+
+
+    }
+
+
+
+    @include sp {
+        margin: 20px 0;
+        position: absolute;
+
+        bottom: 20px;
+        left: 15px;
+
+    }
+}
+
+.search-res {
+    margin-top: 20px;
+}
+
+
+//MENU (SMART PHONE)
+
+.sp-nav-container {
+    position: absolute;
+    right: 2%;
+}
+
+
+#nav-drawer {
+
+
+    position: relative;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+    display: none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span,
+#nav-open span:before,
+#nav-open span:after {
+    position: absolute;
+    height: 3px;
+    /*線の太さ*/
+    width: 25px;
+    /*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+}
+
+#nav-open span:before {
+    bottom: -8px;
+}
+
+#nav-open span:after {
+    bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+    display: none;
+    /*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    /*全体に広がるように*/
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+    position: relative;
+
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    /*最前面に*/
+    width: 90%;
+    /*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px;
+    /*最大幅（調整してください）*/
+    height: 100%;
+    background: #fff;
+    /*背景色*/
+    transition: .3s ease-in-out;
+    /*滑らかに表示*/
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
+    /*左に隠しておく*/
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked~#nav-close {
+    display: block;
+    /*カバーを表示*/
+    opacity: .5;
+}
+
+#nav-input:checked~#nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    /*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0, 0, 0, .15);
+}

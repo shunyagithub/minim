@@ -1,0 +1,45 @@
+@charset "UTF-8";
+body,
+.editor-post-title__input {
+  font-family: -apple-system, Helvetica Neue, Segoe UI, Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, sans-serif;
+}
+
+p {
+  font-size: 18px;
+  line-height: 32px;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h4 {
+  font-size: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+.wp-block:not([data-align="full"]:not([data-align="wide"])) {
+  max-width: calc(700px + 40px);
+}
+
+.wp-block[data-align="wide"] {
+  max-width: calc(1020px + 30px);
+}
+/*# sourceMappingURL=editor-style.css.map */
